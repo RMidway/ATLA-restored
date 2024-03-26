@@ -65,6 +65,7 @@ tribal_governments = {
 			theocracy_government
 		}
 		vassal_call_to_arms = {
+			water_tribe_government
 			tribal_government
 		}
 		no_vassal_tax = {
