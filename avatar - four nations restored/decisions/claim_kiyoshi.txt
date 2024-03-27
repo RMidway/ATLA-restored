@@ -1,0 +1,27 @@
+decisions = {
+	claim_kyoshi_island = {
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = d_avatar
+			NOT = { has_landed_title = c_kyoshi_island }
+		}
+		allow = {
+			NOT = { has_landed_title = c_kyoshi_island }
+		}
+		effect = {
+			ROOT = {
+				c_kyoshi_island = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+				d_kyoshi_island = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+				remove_trait = unrevealedavatar
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
