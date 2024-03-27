@@ -628,6 +628,26 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = special.99
+	desc = EVTDESCspecial.29 #after taking down the first guards, now is the time to decide how to escape
+	title = EVTTITLEspecial.29
+	picture = GFX_evt_bloodbending_prison_3
+
+	is_triggered_only = yes
+
+	option = {
+		create_bloodline = {
+			type = bloodbending_founder
+		}
+	}
+	option = {
+		create_bloodline = {
+			type = metalbending_founder
+		}
+	}
+}
+
 narrative_event = {
 	id = special.29
 	desc = EVTDESCspecial.29 #after taking down the first guards, now is the time to decide how to escape
@@ -670,16 +690,6 @@ narrative_event = {
 	option = { #Search for an escape route
 		name = EVTOPTBspecial.29
 		add_trait = bloodbender
-		if = {
-				limit = {
-					any_owned_bloodline = {
-						NOT = { has_bloodline_flag = bloodline_bloodbender_founder }
-					}
-				}
-				create_bloodline = {
-					type = bloodbending_founder
-				}
-			}
 		random_list = {
 			80 = { #Escape and get back home
 				custom_tooltip = {
@@ -689,7 +699,7 @@ narrative_event = {
 					host = {
 						character_event = { id = special.33 }
 					}
-					character_event = { id = special.57}
+					character_event = { id = special.34}
 				}
 			}
 			20 = { #Despite searching for several hours, I've found no exit and has been subdued by the guards
@@ -703,43 +713,6 @@ narrative_event = {
 				}
 			}
 		}
-	}
-}
-
-narrative_event = { #character discovers metalbending
-	id = special.57
-	desc = EVTDESCspecial.17
-	title = EVTTITLEspecial.17
-	picture = GFX_evt_child_reading
-	is_triggered_only = yes
-	
-	trigger = {
-		trait = waterbender
-		OR = {
-			trait = master_bender
-			trait = legendary_bender
-		}
-		NOT = { trait = bloodbender }
-	}
-	option = {
-		name = EVTOPTAspecial.17
-		if = {
-			limit = {
-				any_owned_bloodline = {
-					NOT = { has_bloodline_flag = bloodline_bloodbender_founder }
-				}
-			}
-			create_bloodline = {
-				type = bloodbending_founder
-			}
-		}
-		hidden_tooltip = {
-			character_event = { id = special.34 }
-		}	
-	}
-	immediate = {
-	
-
 	}
 }
 
@@ -772,6 +745,9 @@ character_event = { # bloodbender is notified about escape
 		name = EVTOPTspecial.31
 		imprison = no
 		add_trait = impaler
+		create_bloodline = {
+			type = bloodbending_founder
+		}
 	}
 }
 

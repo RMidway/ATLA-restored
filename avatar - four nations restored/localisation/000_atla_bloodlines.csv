@@ -19,6 +19,11 @@ blood_of_chin_desc;Chin was a warlord who aimed to overthrow the 46th Earth King
 
 bloodline_effect_free_legitimize;Legitimizing Bastards is §GFree§!;;;;;;;;;;x
 
+bloodbending_founder;Blood of [Root.Founder.GetFirstNameWithNick];;;;;;;;;;x
+bloodbending_founder_desc;[Root.Founder.GetFirstNameWithNick] was an evil [Root.GetManWoman]. [Root.Founder.GetFirstName] managed to successfully learn Bloodbending, a legendary feat. [Root.Founder.GetHerHis] descendants will thank [Root.Founder.GetHerHim] for many generations.;;;;;;;;;;x`
+bloodline_effect_bloodbending_founder;These characters tend to be §MBloodbenders §!;;;;;;;;;;x
+
+
 # bumi
 mad_genius;Blood of King Bumi;;;;;;;;;;x
 mad_genius_desc;King Bumi was a powerful ruler of the Earth Kingdom City of Omashu, a highly skilled and strategic earthbender. He is known to be eccentric and a bit... off the 'hook'.;;;;;;;;;;x
