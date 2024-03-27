@@ -41,8 +41,10 @@ feudal_governments = {
 	}
 
 	avatar_team_government = {
-		preferred_holdings = { }
-		allowed_holdings = { }
+		preferred_holdings = { CASTLE }
+		allowed_holdings = {
+			CASTLE
+		 }
 		accepts_liege_governments = {
 			feudal_government
 			feudal_government_earth_kingdom
