@@ -628,6 +628,26 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = special.99
+	desc = EVTDESCspecial.29 #after taking down the first guards, now is the time to decide how to escape
+	title = EVTTITLEspecial.29
+	picture = GFX_evt_bloodbending_prison_3
+
+	is_triggered_only = yes
+
+	option = {
+		create_bloodline = {
+			type = bloodbending_founder
+		}
+	}
+	option = {
+		create_bloodline = {
+			type = metalbending_founder
+		}
+	}
+}
+
 narrative_event = {
 	id = special.29
 	desc = EVTDESCspecial.29 #after taking down the first guards, now is the time to decide how to escape
@@ -725,6 +745,9 @@ character_event = { # bloodbender is notified about escape
 		name = EVTOPTspecial.31
 		imprison = no
 		add_trait = impaler
+		create_bloodline = {
+			type = bloodbending_founder
+		}
 	}
 }
 
@@ -756,6 +779,7 @@ character_event = { #bloodbender escapes
 	option = {
 		name = EVTOPTspecial.33
 		add_trait = paranoid
+
 		hidden_tooltip = {
 			narrative_event = { id = special.37 }
 		}

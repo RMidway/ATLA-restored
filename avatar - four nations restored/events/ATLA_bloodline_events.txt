@@ -214,6 +214,57 @@ character_event = {
 	}
 }
 
+# bloodbender founder's descedants get bloodbender trait or improve their bending
+character_event = {
+	id = bloodline_events.12
+	title = EVTTITLEbender_bloodlines.3
+	desc = EVTDESCbender_bloodlines.3
+	picture = GFX_evt_metalbending_discovery
+	min_age = 16
+	trigger = {
+		trait = waterbender
+		NOR = {
+			trait = bloodbender
+			has_character_flag = bloodbenderbender_check
+		}
+		any_owned_bloodline = {
+			has_bloodline_flag = bloodline_bloodbender_founder
+		}
+	}
+	immediate = {
+		any_owned_bloodline = {
+			limit = {
+				has_bloodline_flag = bloodline_bloodbender_founder
+			}
+			save_event_target_as = bloodline_bloodbending
+			founder = {
+				save_event_target_as = bloodline_bloodbending_ancestor
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = EVTOPTbender_bloodlines.3
+		tooltip_info_custom = because_bloodline_tt
+		random_list = {
+			75 = {
+				add_trait = bloodbender
+			}
+			25 = {
+				trigger = {
+					NOT = {
+						trait = master_bender
+					}
+				}
+				level_up_bending_effect = yes
+			}
+		}
+		set_character_flag = bloodbender_check
+	}
+}
+
 character_event = {
 	# kyoshi dies in personal duel
 	id = bloodline_events.4
