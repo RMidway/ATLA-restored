@@ -1418,6 +1418,21 @@ character_event = {
 			}
 		}
 	}
+	option = { # Bloodbender - Puppet
+		name = ADUELoptT.15
+		tooltip_info = bloodbender
+		show_trait = bloodbender
+		trigger = {
+			trait = bloodbender
+		}
+		custom_tooltip = {
+			text = ADUEL_ATK_AVATAR_TOOLTIP
+			hidden_tooltip = {
+				subtract_variable = { which = mySTA value = 2 }
+				character_event = { id = ADUEL.104 }
+			}
+		}
+	}
 }
 
 # Duel - Attack - Crit Hit - Attacker
@@ -4549,6 +4564,108 @@ character_event = {
 		name = ADUELoptA.103
 		hidden_tooltip = {
 			FROM = {
+				character_event = { id = ADUEL.14 }
+			}
+		}
+	}
+}
+
+# Duel - Bloodbending - Ability
+character_event = {
+	id = ADUEL.104
+	desc = ADUELdesc.96
+	picture = GFX_evt_eartharena
+	border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+	
+	option = {
+		name = ADUELoptA.96
+		random_list = {
+			80 = { # Hit
+				custom_tooltip = {
+					text = ADUEL_ATK_FREEZE_HIT_TOOLTIP
+					hidden_tooltip = {
+						event_target:hostile = {
+							character_event = { id = ADUEL.105 } # HIT
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					trait = legendary_bender
+				}
+				modifier = {
+					factor = 4
+					trait = master_bender
+				}
+				modifier = {
+					factor = 3
+					trait = powerful_bender
+				}
+			}
+			20 = { # Miss
+				custom_tooltip = {
+					text = ADUEL_ATK_FREEZE_MISS_TOOLTIP
+					hidden_tooltip = {
+						event_target:hostile = {
+							character_event = { id = ADUEL.106 } # MISS
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Duel - Bloodbending - Hit
+character_event = {
+	id = ADUEL.105
+	desc = ADUELdesc.97
+	picture = GFX_evt_eartharena
+	border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = global_atk which = myATK }
+		set_variable = { which = global_memory which = global_atk}
+		if = {
+			limit = {
+				event_target:hostile = {
+					check_variable = { which = global_memory which = myDEF }
+				}
+			}
+			event_target:hostile = {
+				subtract_variable = { which = global_atk which = myDEF }
+				multiply_variable = { which = global_atk value = 8 }
+				subtract_variable = { which = myHP which = global_atk }
+			}
+		}
+	}
+	
+	option = { # Hit
+		name = ADUELoptA.61
+		custom_tooltip = {
+			text = ADUEL_FREEZE_GOT_HIT_TOOLTIP
+			hidden_tooltip = {
+				character_event = { id = ADUEL.14 }
+			}
+		}
+	}
+}
+
+# Duel - Bloodbending - FAIL
+character_event = {
+	id = ADUEL.106
+	desc = ADUELdesc.98
+	picture = GFX_evt_eartharena
+	border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+	
+	option = { # Miss
+		name = ADUELoptA.98
+		custom_tooltip = {
+			text = ADUEL_FREEZE_GOT_MISS_TOOLTIP
+			hidden_tooltip = {
 				character_event = { id = ADUEL.14 }
 			}
 		}
