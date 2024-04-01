@@ -1383,225 +1383,6 @@ character_event = {
 	}
 }
 
-# Fall of the Earth Kingdom
-# narrative_event = {
-	# id = earthking.46
-	# picture = GFX_evt_earth_kingdom_burning
-	# title = EVTNAMEEK.46
-	# desc = EVTDESCEK.46
-	# border = GFX_event_narrative_frame_war
-	# is_triggered_only = yes
-	# major = yes
-
-	# option = {
-		# name = EVTOPTA_EK_46
-		# trigger = {
-			# OR = {
-				# has_landed_title = e_earth_kingdom
-				# has_landed_title = k_earth_kingdom
-			# }
-		# }
-		# custom_tooltip = {
-			# text = EVTOPTC_EK_46_TOOLTIP
-		# }
-		# hidden_tooltip = {
-			# persistent_event_target:Current_EK_Title = { destroy_landed_title = THIS }
-			# if = {
-				# limit = {
-					# k_ba_sing_se = {
-						# has_holder = no
-					# }
-				# }
-				# k_ba_sing_se = {
-					# grant_title = ROOT
-				# }
-			# }
-			# persistent_event_target:Current_EK_Title = { destroy_landed_title = THIS }
-			# remove_trait = earthkingpuppet
-			# remove_trait = earthking
-		# }
-	# }
-	
-	# option = {
-		# name = EVTOPTB_EK_46
-		# trigger = {
-			# NOR = {
-				 # has_landed_title = e_earth_kingdom 
-				# has_landed_title = k_earth_kingdom
-			# }
-		# }
-		# custom_tooltip = {
-			# text = EVTOPTC_EK_46_TOOLTIP
-		# }
-	# }
-# }
-
-# character_event = {
-	# id = earthking.47
-	# is_triggered_only = yes
-	# hide_window = yes
-	# only_rulers = yes
-	
-	# trigger = {
-		# OR = {
-			# has_landed_title = e_earth_kingdom
-			# has_landed_title = k_earth_kingdom
-		# }
-	# }
-	
-	# option = {
-		# current_heir = {
-			# set_variable = { which = global_royalAuthority which = ROOT }
-		# }
-	# }
-# }
-
-# Earth Kingdom - Outer Provinces Rejoin
-# character_event = {
-	# id = earthking.48
-	# picture = GFX_evt_wanshi_desert
-	# border = GFX_event_normal_frame_diplomacy
-	# desc = EVTDESCEK.48
-
-	# is_triggered_only = yes
-	
-	# immediate = {
-		# any_independent_ruler = {
-			# limit = {
-				# is_tributary = no
-				# capital_scope = {
-					# OR = {
-						# region = world_si_wong
-						# region = world_si_wong_fringe
-						# region = world_earth_islands
-						# region = world_northern_ranges 
-						# region = world_the_swamp 
-					# }
-				# }
-			# }
-			# persistent_event_target:Current_EK_Title = {
-				# owner = {
-					# make_tributary = {						
-						# who = ROOT							
-						# percentage = 0.10					
-						# tributary_type = earth_kingdom_territory_tributary
-					# }
-				# }
-			# }
-		# }
-		# clr_global_flag = ek_si_wong_left
-		# clr_global_flag = ek_north_range_left
-		# clr_global_flag = ek_islands_left
-	# }
-		
-	# option = {
-		# name = EVTOPTA_EK_48
-		# custom_tooltip = {
-			# text = EVTOPTC_EK_48_TOOLTIP
-		# }
-		# prestige = 100
-	# }
-# }
-
-# Earth Kingdom - Middle Provinces Rejoin
-# character_event = {
-	# id = earthking.49
-	# picture = GFX_evt_wanshi_desert
-	# border = GFX_event_normal_frame_diplomacy
-	# desc = EVTDESCEK.49
-
-	# is_triggered_only = yes
-	
-	# immediate = {
-		# any_independent_ruler = {
-			# limit = {
-				# is_tributary = no
-				# capital_scope = {
-					# OR = {
-						# region = world_western_shore
-						# region = world_southern_coast
-						# region = world_xiong_lin_territory
-						# region = world_eastern_coast
-						# region = world_omashu_plains 
-						# region = world_hu_xin_provinces 
-					# }
-				# }
-			# }
-			# persistent_event_target:Current_EK_Title = {
-				# owner = {
-					# make_tributary = {						
-						# who = ROOT							
-						# percentage = 0.10					
-						# tributary_type = earth_kingdom_territory_tributary
-					# }
-				# }
-			# }
-		# }
-		# clr_global_flag = ek_west_shore_left
-		# clr_global_flag = ek_south_shore_left
-		# clr_global_flag = ek_east_coast_left
-		# clr_global_flag = ek_omashu_left
-	# }
-		
-	# option = {
-		# name = EVTOPTA_EK_49
-		# custom_tooltip = {
-			# text = EVTOPTC_EK_48_TOOLTIP
-		# }
-		# prestige = 100
-	# }
-# }
-
-# Earth Kingdom - Inner Provinces Rejoin
-# character_event = {
-	# id = earthking.50
-	# picture = GFX_evt_wanshi_desert
-	# border = GFX_event_normal_frame_diplomacy
-	# desc = EVTDESCEK.50
-
-	# is_triggered_only = yes
-	
-	# immediate = {
-		# any_independent_ruler = {
-			# limit = {
-				# is_tributary = no
-				# capital_scope = {
-					# OR = {
-						# region = world_old_makapu
-						# region = world_southern_valley
-						# region = world_western_plains
-						# region = world_central_desert
-						# region = world_northern_plains
-						# region = world_dongfang_peninsular 
-						# region = world_southern_plains 
-					# }
-				# }
-			# }
-			# persistent_event_target:Current_EK_Title = {
-				# owner = {
-					# make_tributary = {						
-						# who = ROOT							
-						# percentage = 0.10					
-						# tributary_type = earth_kingdom_territory_tributary
-					# }
-				# }
-			# }
-		# }
-		# clr_global_flag = ek_gaoling_left
-		# clr_global_flag = ek_central_left
-		# clr_global_flag = ek_dongfang_left
-		# clr_global_flag = ek_basingse_left
-	# }
-		
-	# option = {
-		# name = EVTOPTA_EK_50
-		# custom_tooltip = {
-			# text = EVTOPTC_EK_48_TOOLTIP
-		# }
-		# prestige = 100
-	# }
-# }
-
 # Earth Kingdom - Royal Authority - Five Yearly Checkup
 character_event = {
 	id = earthking.56
@@ -1647,7 +1428,6 @@ character_event = {
 		set_variable = { which = laws_ra_gain value = 0 }
 		set_variable = { which = bloodline_ra_gain value = 0 }
 		set_variable = { which = traits_ra_gain value = 0 }
-		set_variable = { which = religion_ra_gain value = 0 }
 		ROOT = {
 			any_tributary = { # Tributaries gain
 				if = {
@@ -1958,27 +1738,16 @@ character_event = {
 					ek_unity_2 = { change_variable = { which = laws_ra_gain value = 2 } }
 					ek_unity_3 = { change_variable = { which = laws_ra_gain value = 2.5 } }	
 				}
-				
-				# trigger_switch = {
-				# on_trigger = has_law	- commented out until they are added in for good		
-					# ek_system_law_1 = { change_variable = { which = laws_ra_gain value = -3 } }
-					# ek_system_law_2 = { change_variable = { which = laws_ra_gain value = -2 } }
-					# ek_system_law_3 = { change_variable = { which = laws_ra_gain value = -1 } }
-					# ek_system_law_5 = { change_variable = { which = laws_ra_gain value = 1 } }
-					# ek_system_law_6 = { change_variable = { which = laws_ra_gain value = 1.5 } }
-				# }
 			}
 		}
 		divide_variable = { which = global_num_of_ek_tributaries value = 20 }
 		export_to_variable = { which = num_of_ek_realm value = num_of_vassals }
 		divide_variable = { which = num_of_ek_realm value = 25 }
-		#divide_variable = { which = religion_ra_gain value = 10 }
 		change_variable = { which = global_royalAuthority which = global_num_of_ek_tributaries }
 		change_variable = { which = global_royalAuthority which = num_of_ek_realm }
 		change_variable = { which = global_royalAuthority which = bloodline_ra_gain }
 		change_variable = { which = global_royalAuthority which = laws_ra_gain }
 		change_variable = { which = global_royalAuthority which = traits_ra_gain }	
-		change_variable = { which = global_royalAuthority which = religion_ra_gain }			
 		
 		#If royal authority outside the -100 to 100 range, clamp it.
 		if = { # Authority Cap + Absolute
@@ -1986,7 +1755,7 @@ character_event = {
 				check_variable = { which = global_royalAuthority value > 100 }
 			}
 			set_variable = { which = global_royalAuthority value = 100 }
-		}		
+		}
 		if = { # Authority Cap -
 			limit = {
 				check_variable = { which = global_royalAuthority value < -100 }
