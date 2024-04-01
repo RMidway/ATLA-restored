@@ -1411,14 +1411,11 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		OR = {
-			primary_title = {
-				OR = {
-					title = e_earth_kingdom
-					title = k_earth_kingdom
-				}
+		has_landed_title = {
+			OR = {
+				title = e_earth_kingdom
+				title = k_earth_kingdom
 			}
-			trait = earthking
 		}
 	}
 	
