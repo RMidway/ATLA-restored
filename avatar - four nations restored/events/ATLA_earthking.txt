@@ -1793,11 +1793,11 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA_EK_56
-			custom_tooltip = {
-				text = RA_GAIN_FIVE_YEAR
-			}
+		custom_tooltip = {
+			text = RA_GAIN_FIVE_YEAR
 		}
 	}
+}
 
 # Earth Kingdom - Royal Authority - Relation Boost
 character_event = {

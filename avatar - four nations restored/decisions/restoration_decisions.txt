@@ -1451,7 +1451,4 @@ decisions = {
 			factor = 1
 		}
 	}
-	
-}	
-
-
+}
